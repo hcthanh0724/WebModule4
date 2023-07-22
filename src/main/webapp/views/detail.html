@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/store.css">
+    <link rel="stylesheet" href="../assets/css/logo.css">
+    <script src="../assets/js/logo.js"></script>
+    <link rel="stylesheet" href="../assets/css/button.css">
+
+</head>
+<body>
+<!--logo-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="logo">
+                <div class="first"></div>
+                <div class="second"></div>
+            </div>
+        </div>
+        <div class="col-md-8" th:object="${product}">
+            <h1>VALORANT</h1>
+            <div class="cards__item cards__item--clr3">
+                <div class="cards__price" th:text="*{price}">¤ 652</div>
+                <div class="cards__name" th:text="*{name}">Kingdom Classic</div>
+                <div class="cards__product d-flex justify-content-center">
+                    <img th:src="*{img}" alt="">
+                </div>
+            </div>
+            <div class="cards__description">
+                <h2 th:text="*{content}">Detail</h2>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="cards__button">
+                <a th:href="@{/addCart(id=${product.id})}">
+                    <button class="outline" type="button">
+                        <div class="label">
+                            <span class="hover-effect"></span>
+                            <span class="label-text">Add to cart</span>
+                        </div>
+                    </button>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

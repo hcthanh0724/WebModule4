@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/cart.css">
+    <script src="../assets/js/cart.js"></script>
+
+
+</head>
+<body>
+<div>
+    <header id="site-header" style="background-color: black">
+        <div class="container" style="background-color: black;color: darkred;text-align: center">
+            <h1>Skin cart</h1>
+        </div>
+    </header>
+
+    <div class="container" th:each="p:${products}">
+
+        <section id="cart">
+            <article class="product">
+                <header>
+                    <!--        img-->
+                    <a class="remove">
+                        <img th:src="${p.img}" alt="">
+
+                        <h3>Remove product</h3>
+                    </a>
+                </header>
+                <div class="content">
+                    <!--                name-->
+                    <h1 th:text="${p.name}">Lorem ipsum</h1>
+                    <!--                content-->
+                    <p th:text="${p.content}">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, numquam quis perspiciatis ea
+                        ad
+                        omnis
+                        provident laborum dolore in atque.
+                    </p>
+
+
+                    <div title="You have selected this product to be shipped in the color yellow." style="top: 0"
+                         class="color yellow"></div>
+                </div>
+
+                <footer class="content">
+                    <span class="qt-minus">-</span>
+                    <!--                quantity-->
+                    <span class="qt" th:text="${p.quantity}">2</span>
+                    <span class="qt-plus">+</span>
+                    <!--price-->
+                    <h2 class="full-price" th:text="${p.price}">
+                        29.98€
+                    </h2>
+                </footer>
+            </article>
+        </section>
+
+    </div>
+
+    <footer id="site-footer">
+        <div class="container clearfix">
+
+
+            <div class="right">
+                <h1 class="total" th:text="${total}">Total: <span>177.16</span>€</h1>
+                <a class="btn" href="/invoice">Checkout</a>
+            </div>
+
+        </div>
+    </footer>
+</div>
+</body>
+</html>

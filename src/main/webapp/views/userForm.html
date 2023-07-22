@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../assets/js/userForm.js"></script>
+  <link rel="stylesheet" href="../assets/css/userForm.css">
+  <link rel="stylesheet" href="../assets/css/button.css">
+</head>
+<body>
+<h1 style="text-align: center;color: darkred">Order Verification</h1>
+<div data-wrapper></div>
+<form style="margin-top: 100px" method="post" th:object="${invoice}">
+  <input type=text id=to th:field="*{customer_name}" placeholder="Enter your name" required>
+  <input type=text id=subject th:field="*{customer_address}" placeholder="Enter your address" required>
+    <button class="outline" type="submit">
+      <div class="label">
+        <span class="hover-effect"></span>
+        <span class="label-text">Submit</span>
+      </div>
+    </button>
+
+</form>
+<pre id=link></pre>
+</body>
+</html>

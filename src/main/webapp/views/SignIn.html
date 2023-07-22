@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/SignIn.css">
+    <link rel="stylesheet" href="../assets/css/button.css">
+
+</head>
+<body style="background-color: black">
+
+<div class="main">
+    <div class="contain">
+        <header class="header">
+            <h1 id="title">
+                Valorant Sign In Website
+            </h1>
+            <p id="description">
+                We are all Valorant
+            </p>
+        </header>
+        <form id=survey-form method="post" th:action="@{/login}">
+            <div class="form-group">
+                <label id="name-label" for="name">Your username</label>
+                <input type="text"
+                       name="username"
+                       id="name"
+                       class="form-control"
+                       placeholder="Enter your username"
+                       required/>
+            </div>
+            <div class="form-group">
+                <label id="email-label" for="password">Password</label>
+                <input type="password"
+                       name="password"
+                       id="password"
+                       class="form-control"
+                       placeholder="Enter your password"
+                       required/>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <div class="cards__button">
+                    <a th:href="@{/login}">
+                        <button class="outline" type="submit">
+                            <div class="label">
+                                <span class="hover-effect"></span>
+                                <span class="label-text">Sign in</span>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <div class="cards__button">
+                    <a th:href="">
+                        <button class="outline" type="submit">
+                            <div class="label">
+                                <span class="hover-effect"></span>
+                                <span class="label-text">Sign up</span>
+                            </div>
+                        </button>
+                    </a>
+                </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

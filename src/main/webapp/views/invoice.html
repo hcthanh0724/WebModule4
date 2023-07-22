@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../assets/css/invoice.css">
+</head>
+<body>
+<div class="invoice-card" th:object="${invoice}">
+    <div class="invoice-title">
+        <div id="main-title">
+            <h4>INVOICE</h4>
+            <span th:text="*{id}">#89 292</span>
+        </div>
+
+        <span th:text="*{date}">16/02/2019</span>
+    </div>
+
+    <div class="invoice-details">
+        <table class="invoice-table">
+            <thead>
+            <tr>
+                <td>PRODUCT</td>
+                <td>UNIT</td>
+                <td>PRICE</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="row-data" th:each="invoiceDetail : ${invoiceDetail}">
+                <td th:text="${invoiceDetail.product.name}"></td>
+                <td th:text="${invoiceDetail.quantity}"></td>
+                <td th:text="${invoiceDetail.product.price}"></td>
+            </tr>
+            <tr class="calc-row">
+                <td colspan="2">Total</td>
+                <td th:text="${invoice.total}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="invoice-footer">
+        <button class="btn btn-secondary" id="later">LATER</button>
+        <button class="btn btn-primary">PAY NOW</button>
+    </div>
+</div>
+</body>
+</html>

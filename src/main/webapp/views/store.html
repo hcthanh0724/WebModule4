@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gun site</title>
+  <link rel="stylesheet" href="../assets/css/store.css">
+  <link rel="stylesheet" href="../assets/css/logo.css">
+  <script src="../assets/js/logo.js"></script>
+</head>
+<body style="background-color: black">
+<div class="header-panel" style="margin-top: 0px;">
+  <div class="logo">
+    <div class="first"></div>
+    <div class="second"></div>
+  </div>
+  <h1>VALORANT</h1>
+</div>
+<div>
+  <div class="cards">
+    <div class="cards__item cards__item--clr1" th:each="s:${store}">
+      <div class="cards__price" th:text="${s.price}"></div>
+      <div class="cards__name" th:text="${s.name}"></div>
+      <div class="cards__product">
+        <a th:href="@{/detail(id=${s.id})}">
+          <img th:src="${s.img}" alt="">
+        </a>
+
+      </div>
+    </div>
+<!--    <div class="cards__item cards__item&#45;&#45;clr2">-->
+<!--      <div class="cards__price">¤ 652</div>-->
+<!--      <div class="cards__name">Kingdom Classic</div>-->
+<!--      <div class="cards__product">-->
+<!--        <img src="https://vgraphs.com/images/weapons/skins/valorant-weapon-skin-kingdom-classic.png" alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="cards__item cards__item&#45;&#45;clr3">-->
+<!--      <div class="cards__price">¤ 480</div>-->
+<!--      <div class="cards__name">Surge Classic</div>-->
+<!--      <div class="cards__product">-->
+<!--        <img src="https://vgraphs.com/images/weapons/skins/valorant-weapon-skin-surge-classic.png" alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="cards__item cards__item&#45;&#45;clr4">-->
+<!--      <div class="cards__price">¤ 930</div>-->
+<!--      <div class="cards__name">Smite Classic</div>-->
+<!--      <div class="cards__product">-->
+<!--        <img src="https://vgraphs.com/images/weapons/skins/valorant-weapon-skin-smite-classic.png" alt="">-->
+<!--      </div>-->
+<!--    </div>-->
+  </div>
+</div>
+</body>
+</html>
